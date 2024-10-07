@@ -14,10 +14,20 @@ public class EnemigoIA : MonoBehaviour
     // Variable para referenciar otro componente del objeto
     private Rigidbody2D miRigidbody2D;
     private Vector2 direccion;
+    private SpriteRenderer miSprite;
+    private Animator miAnimator;
 
     private void Awake()
     {
         miRigidbody2D = GetComponent<Rigidbody2D>();
+        miSprite = GetComponent<SpriteRenderer>();
+        miAnimator = GetComponent<Animator>();
+    }
+
+    private void Update() { 
+        int velocidadX = (int)miRigidbody2D.velocity.x;
+        miSprite.flipX = velocidadX > 0;
+        miAnimator.SetInteger("Velocidad", velocidadX);
     }
 
     private void FixedUpdate()
