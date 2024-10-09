@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Progression : MonoBehaviour
 {
-    public int nivel;
-    public int experiencia;
-    public int experienciaProximoNivel;
-    public int escalarExperiencia;
+    private Jugador jugador;
 
+    private void Awake()
+    {
+        jugador = GetComponent<Jugador>();
+    }
     public void GanarExperiencia(int nuevaExperiencia) {
-        experiencia += nuevaExperiencia;
-        if (experiencia >= experienciaProximoNivel) {
+        jugador.PerfilJugador.Experiencia += nuevaExperiencia;
+        if (jugador.PerfilJugador.Experiencia >= jugador.PerfilJugador.ExperienciaProximoNivel) {
             SubirNivel();
         }
     }
 
     public void SubirNivel() {
-        nivel++;
-        experiencia -= experienciaProximoNivel;
-        experienciaProximoNivel += escalarExperiencia;
+        jugador.PerfilJugador.Nivel++;
+        jugador.PerfilJugador.Experiencia -= jugador.PerfilJugador.ExperienciaProximoNivel;
+        jugador.PerfilJugador.ExperienciaProximoNivel += jugador.PerfilJugador.EscalarExperiencia;
+        Debug.Log("Subio de nivel");
     }
 }
