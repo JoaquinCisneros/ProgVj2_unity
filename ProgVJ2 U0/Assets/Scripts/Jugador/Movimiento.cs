@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    // Variables a configurar desde el editor
-    [Header("Configuracion")]
-    [SerializeField] float velocidad = 5f;
+    private Jugador jugador;
 
     // Variables de uso interno en el script
     private float moverHorizontal;
@@ -21,8 +19,13 @@ public class Mover : MonoBehaviour
     private int saltarMask;
 
     // Codigo ejecutado cuando el objeto se activa en el nivel
+    private void Awake()
+    {
+        jugador = GetComponent<Jugador>();
+    }
     private void OnEnable()
     {
+        jugador = GetComponent<Jugador>();
         miRigidbody2D = GetComponent<Rigidbody2D>();
         miAnimator = GetComponent<Animator>();
         miSprite = GetComponent<SpriteRenderer>();
@@ -44,7 +47,7 @@ public class Mover : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        miRigidbody2D.AddForce(direccion * velocidad);
+        miRigidbody2D.AddForce(direccion * jugador.PerfilJugador.VelocidadHorizontal);
     }
 
     private bool EnContactoConPlataforma() {
