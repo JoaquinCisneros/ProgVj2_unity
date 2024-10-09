@@ -8,8 +8,8 @@ public class EnemigoIA : MonoBehaviour
     [Header("Configuracion")]
     [SerializeField] float velocidad = 5f;
 
-    // Referencia al transform del jugador serializada
-    [SerializeField] Transform jugador;
+    // Referencia al transform del jugador
+    private Transform jugador;
 
     // Variable para referenciar otro componente del objeto
     private Rigidbody2D miRigidbody2D;
@@ -24,7 +24,14 @@ public class EnemigoIA : MonoBehaviour
         miAnimator = GetComponent<Animator>();
     }
 
-    private void Update() { 
+    private void Start()
+    {
+        // Encuentra al jugador por etiqueta
+        jugador = GameObject.FindWithTag("Player").transform;
+    }
+
+    private void Update()
+    {
         int velocidadX = (int)miRigidbody2D.velocity.x;
         miSprite.flipX = velocidadX > 0;
         miAnimator.SetInteger("Velocidad", velocidadX);
@@ -32,8 +39,12 @@ public class EnemigoIA : MonoBehaviour
 
     private void FixedUpdate()
     {
-        direccion = (jugador.position - transform.position).normalized;
-        miRigidbody2D.MovePosition(miRigidbody2D.position + direccion * (velocidad * Time.fixedDeltaTime));
+        if (jugador != null) // Verifica que la referencia exista
+        {
+            direccion = (jugador.position - transform.position).normalized;
+            miRigidbody2D.MovePosition(miRigidbody2D.position + direccion * (velocidad * Time.fixedDeltaTime));
+        }
     }
-
 }
+
+
