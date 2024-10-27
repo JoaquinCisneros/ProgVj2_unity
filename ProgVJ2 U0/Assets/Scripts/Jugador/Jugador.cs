@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Jugador : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class Jugador : MonoBehaviour
         perfilJugador.Vida += puntos;
         OnLivesChanged.Invoke(perfilJugador.Vida);
         //OnTextChanged.Invoke(perfilJugador.Vida.ToString());
+        if (!EstasVivo()) {
+            SceneManager.LoadScene("Derrota");
+        }
         Debug.Log(EstasVivo());
     }
 
@@ -38,7 +42,8 @@ public class Jugador : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.gameObject.CompareTag("Meta")) { return; }
-
+        //Cambio a la escena de victoria
+        SceneManager.LoadScene("Victoria");
         Debug.Log("GANASTE");
     }
 }
