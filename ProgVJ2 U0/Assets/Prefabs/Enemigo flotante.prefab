@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 2
-  jugador: {fileID: 0}
 --- !u!114 &-5422691168084949379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a510e6868b916424a90bb88e33ca0aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntos: 5
+  puntos: 1
 --- !u!95 &5268908150272773078
 Animator:
   serializedVersion: 5

@@ -29,8 +29,8 @@ public class PerfilJugador : ScriptableObject
     public float FuerzaSalto { get => fuerzaSalto; set => fuerzaSalto = value; }
 
     [Header("Configuraciones de atributos")]
-    [SerializeField] private float vida = 5f;
-    public float Vida { get => vida; set => vida = value; }
+    [SerializeField] private int vida = 5;
+    public int Vida { get => vida; set => vida = value; }
 
     [Header("Configuracion SFX")]
     [SerializeField] private AudioClip jumpSFX;

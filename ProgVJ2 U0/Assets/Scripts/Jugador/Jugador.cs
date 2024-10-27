@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Jugador : MonoBehaviour
 {
@@ -8,9 +9,23 @@ public class Jugador : MonoBehaviour
     private PerfilJugador perfilJugador;
     public PerfilJugador PerfilJugador { get => perfilJugador; }
 
-    public void ModificarVida(float puntos)
+    //Eventos Jugador
+    [SerializeField]
+    private UnityEvent<int> OnLivesChanged;
+    //[SerializeField]
+   // private UnityEvent<string> OnTextChanged;
+
+    private void Start()
+    {
+        OnLivesChanged.Invoke(perfilJugador.Vida);
+        //OnTextChanged.Invoke(perfilJugador.Vida.ToString());
+    }
+
+    public void ModificarVida(int puntos)
     {
         perfilJugador.Vida += puntos;
+        OnLivesChanged.Invoke(perfilJugador.Vida);
+        //OnTextChanged.Invoke(perfilJugador.Vida.ToString());
         Debug.Log(EstasVivo());
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Curar : MonoBehaviour
 {
     [Header("Configuracion")]
-    [SerializeField] float puntos = 5f;
+    [SerializeField] int puntos = 5;
 
     private void OnParticleCollision(GameObject other)
     {

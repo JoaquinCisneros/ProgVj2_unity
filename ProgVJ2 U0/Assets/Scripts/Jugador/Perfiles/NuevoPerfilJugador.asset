@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c2c877acb64ad4b91df9f1330cb1fb, type: 3}
   m_Name: NuevoPerfilJugador
   m_EditorClassIdentifier: 
-  nivel: 1
-  experiencia: 0
-  experienciaProximoNivel: 12
+  nivel: 3
+  experiencia: 17
+  experienciaProximoNivel: 22
   escalarExperiencia: 2
   velocidad: 7
   fuerzaSalto: 10
-  vida: 0
+  vida: 13
   jumpSFX: {fileID: 8300000, guid: 7c588c93706b1774b888d5a7cb19a796, type: 3}
   collisionSFX: {fileID: 8300000, guid: 31b3e3f6224ee7b4b9dfd7936cb0b953, type: 3}
