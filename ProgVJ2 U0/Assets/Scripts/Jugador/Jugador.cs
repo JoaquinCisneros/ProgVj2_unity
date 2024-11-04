@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class Jugador : MonoBehaviour
+public class Jugador : MonoBehaviour, IDamageable
 {
     [SerializeField]
     private PerfilJugador perfilJugador;
@@ -20,6 +20,11 @@ public class Jugador : MonoBehaviour
     {
         OnLivesChanged.Invoke(perfilJugador.Vida);
         //OnTextChanged.Invoke(perfilJugador.Vida.ToString());
+    }
+
+    public void TakeDamage(int damageAmount) {
+        ModificarVida(-damageAmount);
+        Debug.Log("Recibio daño: " + damageAmount);
     }
 
     public void ModificarVida(int puntos)
