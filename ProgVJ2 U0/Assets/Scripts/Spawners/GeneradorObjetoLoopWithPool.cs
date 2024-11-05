@@ -16,12 +16,8 @@ public class GeneradorObjetoLoopWithPool : MonoBehaviour
     private void Awake() { 
         objectPool = GetComponent<ObjectPool>();
     }
-    void Start()
-    {
-        InvokeRepeating(nameof(GenerarObjetoLoop), tiempoEspera, tiempoIntervalo);
-    }
 
-    void GenerarObjetoLoop()
+    private void GenerarObjetoLoop()
     {
         GameObject pooledObject = objectPool.GetPooledObject();
 
@@ -30,5 +26,17 @@ public class GeneradorObjetoLoopWithPool : MonoBehaviour
             pooledObject.transform.rotation = Quaternion.identity;
             pooledObject.SetActive(true);
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Debug.Log("El SpriteRenderer deja de ser visto por las camaras de la escena");
+        CancelInvoke(nameof(GenerarObjetoLoop));
+    }
+
+    private void OnBecameVisible()
+    {
+        Debug.Log("El SpriteRenderer es visto por las camaras en la escena");
+        InvokeRepeating(nameof(GenerarObjetoLoop), tiempoEspera, tiempoIntervalo);
     }
 }

@@ -24,7 +24,7 @@ public class ObjectPool : MonoBehaviour
 
     public GameObject GetPooledObject() {
         foreach (GameObject obj in pooledObjects) {
-            if (obj.activeInHierarchy) {
+            if (!obj.activeInHierarchy) {
                 return obj;
             }
         }

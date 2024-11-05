@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2320778398763670014}
   - component: {fileID: 2080581684970787374}
-  - component: {fileID: 7646559742618425222}
   - component: {fileID: -2416778758777378682}
   - component: {fileID: 7574123760287533485}
   m_Layer: 0
@@ -87,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7646559742618425222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4530584538572132585}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 719b4a3e5584a8e45945f3f20fede9f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objetosPrefabs:
-  - {fileID: 236619554239684416, guid: e511db38a5c38d343b9afb62659fd3e8, type: 3}
-  tiempoEspera: 1
-  tiempoIntervalo: 4
 --- !u!114 &-2416778758777378682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6292cbe592345eb4e90f6ca2e461d928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoEspera: 0.5
-  tiempoIntervalo: 0.5
+  tiempoEspera: 1
+  tiempoIntervalo: 3
 --- !u!114 &7574123760287533485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,5 +112,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ad8afb10cb15b43af60f0705df6930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectoPrefab: {fileID: 4530584538572132585}
+  objectoPrefab: {fileID: 236619554239684416, guid: e511db38a5c38d343b9afb62659fd3e8, type: 3}
   poolSize: 3

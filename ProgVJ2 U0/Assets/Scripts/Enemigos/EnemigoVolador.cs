@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemigoVolador : Enemigo
 {
-
     public override void Herir(IDamageable target)
     {
         target.TakeDamage(puntos);
@@ -14,4 +13,5 @@ public class EnemigoVolador : Enemigo
         gameObject.SetActive(false);
     }
 }
+
 
