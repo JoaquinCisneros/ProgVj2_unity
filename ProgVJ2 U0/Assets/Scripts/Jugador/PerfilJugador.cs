@@ -35,7 +35,9 @@ public class PerfilJugador : ScriptableObject
     [Header("Configuracion SFX")]
     [SerializeField] private AudioClip jumpSFX;
     [SerializeField] private AudioClip collisionSFX;
+    [SerializeField] private AudioClip hitSFX;
 
     public AudioClip JumpSFX { get => jumpSFX; }
     public AudioClip CollisionSFX { get => collisionSFX; }
+    public AudioClip HitSFX { get => hitSFX; }
 }

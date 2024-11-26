@@ -10,21 +10,53 @@ public class Jugador : MonoBehaviour, IDamageable
     private PerfilJugador perfilJugador;
     public PerfilJugador PerfilJugador { get => perfilJugador; }
 
+    private Animator animator;
+    private AudioSource audioSource;
+
     //Eventos Jugador
     [SerializeField]
     private UnityEvent<int> OnLivesChanged;
-    //[SerializeField]
-   // private UnityEvent<string> OnTextChanged;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         OnLivesChanged.Invoke(perfilJugador.Vida);
-        //OnTextChanged.Invoke(perfilJugador.Vida.ToString());
+    }
+
+    private void OnEnable()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damageAmount) {
         ModificarVida(-damageAmount);
         Debug.Log("Recibio daño: " + damageAmount);
+        TriggerHitAnimation();
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(perfilJugador.HitSFX);
+        }
+
+    }
+
+    private void TriggerHitAnimation()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isHit", true); // Activar el flag de daño
+            animator.SetTrigger("Hit");
+            StartCoroutine(ResetHitFlag());
+        }
+        else
+        {
+            Debug.LogWarning("Animator no asignado en el jugador.");
+        }
+    }
+
+    private IEnumerator ResetHitFlag()
+    {
+        yield return new WaitForSeconds(0.1f); // Ajusta la duración según sea necesario
+        animator.SetBool("isHit", false);
     }
 
     public void ModificarVida(int puntos)

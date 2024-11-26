@@ -3889,7 +3889,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 330ddcb70bf2554458c0286092b2ad6c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.335
+  m_Volume: 0.151
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14365,6 +14365,10 @@ PrefabInstance:
     - target: {fileID: 6184998468806080486, guid: 225e9d8ac65f3fb4496d4bf7a51a6069, type: 3}
       propertyPath: m_Name
       value: Jugador
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732223529039728238, guid: 225e9d8ac65f3fb4496d4bf7a51a6069, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8587969685822307241, guid: 225e9d8ac65f3fb4496d4bf7a51a6069, type: 3}
       propertyPath: m_Color.b
