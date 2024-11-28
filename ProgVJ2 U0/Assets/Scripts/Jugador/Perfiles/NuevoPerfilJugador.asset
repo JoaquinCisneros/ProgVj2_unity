@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nivel: 1
   experiencia: 0
-  experienciaProximoNivel: 10
+  experienciaProximoNivel: 14
   escalarExperiencia: 2
-  velocidad: 35
+  velocidad: 60
   fuerzaSalto: 45
-  vida: 3
+  vida: 5
   jumpSFX: {fileID: 8300000, guid: 7c588c93706b1774b888d5a7cb19a796, type: 3}
   collisionSFX: {fileID: 8300000, guid: 31b3e3f6224ee7b4b9dfd7936cb0b953, type: 3}
   hitSFX: {fileID: 8300000, guid: 5dfe37ca16e878e4bb13c6f3e7be0a55, type: 3}
+  coinSFX: {fileID: 8300000, guid: 73b3660660a2c824fbfb7c3ea9db954d, type: 3}

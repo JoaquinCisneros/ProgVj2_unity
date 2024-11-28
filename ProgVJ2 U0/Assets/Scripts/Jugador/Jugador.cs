@@ -55,7 +55,7 @@ public class Jugador : MonoBehaviour, IDamageable
 
     private IEnumerator ResetHitFlag()
     {
-        yield return new WaitForSeconds(0.1f); // Ajusta la duración según sea necesario
+        yield return new WaitForSeconds(0.25f); // Duracion
         animator.SetBool("isHit", false);
     }
 
@@ -65,7 +65,13 @@ public class Jugador : MonoBehaviour, IDamageable
         OnLivesChanged.Invoke(perfilJugador.Vida);
         //OnTextChanged.Invoke(perfilJugador.Vida.ToString());
         if (!EstasVivo()) {
-            SceneManager.LoadScene("Derrota");
+            perfilJugador.Vida = 5;
+            perfilJugador.Nivel = 1;
+            perfilJugador.Experiencia = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            /*SceneManager.LoadScene("Derrota");
+             */
+
         }
         Debug.Log(EstasVivo());
     }

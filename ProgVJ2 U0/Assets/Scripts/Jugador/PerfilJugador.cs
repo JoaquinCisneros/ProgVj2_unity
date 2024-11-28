@@ -36,8 +36,10 @@ public class PerfilJugador : ScriptableObject
     [SerializeField] private AudioClip jumpSFX;
     [SerializeField] private AudioClip collisionSFX;
     [SerializeField] private AudioClip hitSFX;
+    [SerializeField] private AudioClip coinSFX;
 
     public AudioClip JumpSFX { get => jumpSFX; }
     public AudioClip CollisionSFX { get => collisionSFX; }
     public AudioClip HitSFX { get => hitSFX; }
+    public AudioClip CoinSFX { get => coinSFX; }
 }

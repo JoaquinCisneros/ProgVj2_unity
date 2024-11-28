@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3935001540946317659}
   - component: {fileID: 8587969685822307241}
-  - component: {fileID: 5244594647660374464}
+  - component: {fileID: 4826803940820209223}
   - component: {fileID: 566363162622102698}
   - component: {fileID: 4461195088976187160}
   - component: {fileID: 7934260830002346266}
@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.26, y: -1.77, z: 0}
-  m_LocalScale: {x: 1.1737316, y: 1.085702, z: 2.347463}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,8 +81,8 @@ SpriteRenderer:
   m_SortingLayerID: -1513625483
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ca5ea38d989f12f43bd43d0057bb660a, type: 3}
-  m_Color: {r: 0.3066038, g: 0.8245474, b: 1, a: 1}
+  m_Sprite: {fileID: 4723107735738678597, guid: f374107ba66790641b6b7c9d0d9a49d3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,8 +92,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5244594647660374464
-CircleCollider2D:
+--- !u!61 &4826803940820209223
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 6184998468806080486}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dbb8c8cd002da254caa589ba14fd86fc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -124,9 +124,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0037500858, y: -0.02062571}
+  m_Offset: {x: -0.000000059604645, y: 0.019800276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.62938035
+  m_Size: {x: 0.3259281, y: 0.44392115}
+  m_EdgeRadius: 0
 --- !u!50 &566363162622102698
 Rigidbody2D:
   serializedVersion: 4
@@ -142,8 +152,8 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 3
   m_AngularDrag: 0
-  m_GravityScale: 1.5
-  m_Material: {fileID: 0}
+  m_GravityScale: 3
+  m_Material: {fileID: 6200000, guid: dbb8c8cd002da254caa589ba14fd86fc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

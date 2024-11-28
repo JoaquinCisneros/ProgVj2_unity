@@ -12,7 +12,9 @@ public class Curar : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Jugador jugador = other.GetComponent<Jugador>();
-            jugador.ModificarVida(puntos);
+            if (jugador.PerfilJugador.Vida < 5) {
+                jugador.ModificarVida(puntos);
+            }
             Debug.Log(" PUNTOS DE DAÑO REALIZADOS AL JUGADOR " + puntos);
         }
     }

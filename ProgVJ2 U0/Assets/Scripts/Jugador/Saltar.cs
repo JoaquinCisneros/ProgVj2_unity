@@ -14,10 +14,14 @@ public class Saltar : MonoBehaviour
     private Rigidbody2D miRigidbody2D;
     private AudioSource miAudioSource;
 
+    public BoxCollider2D groundCollider2D;
+    private int saltarMask;
+
     // Codigo ejecutado cuando el objeto se activa en el nivel
     private void Awake()
     {
         jugador = GetComponent<Jugador>();
+        saltarMask = LayerMask.GetMask("Pisos", "Plataformas");
     }
     private void OnEnable()
     {
@@ -50,8 +54,10 @@ public class Saltar : MonoBehaviour
     // Codigo ejecutado cuando el jugador colisiona con otro objeto
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        puedoSaltar = true;
-        saltando = false;
+        if (groundCollider2D.IsTouchingLayers(saltarMask)) {
+            puedoSaltar = true;
+            saltando = false;
+        }
 
         if (miAudioSource.isPlaying) { return; }
         miAudioSource.PlayOneShot(jugador.PerfilJugador.CollisionSFX);
