@@ -4788,7 +4788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab2c0867a93d814ba2825cd794ca621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 1455302376}
+  perfilJugador: {fileID: 11400000, guid: e3bec004260a6cc4fb68f2e365aa8746, type: 2}
 --- !u!4 &217068798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2720601662934316023, guid: 223e36d371a73b54285515aab7ef30cd, type: 3}
@@ -8750,17 +8750,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3935001540946317659, guid: 225e9d8ac65f3fb4496d4bf7a51a6069, type: 3}
   m_PrefabInstance: {fileID: 7459520198459130678}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1455302376 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 54603524154195666, guid: 225e9d8ac65f3fb4496d4bf7a51a6069, type: 3}
-  m_PrefabInstance: {fileID: 7459520198459130678}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df2a8f72546ed54382422a09d722c87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1459677768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2720601662934316023, guid: 223e36d371a73b54285515aab7ef30cd, type: 3}

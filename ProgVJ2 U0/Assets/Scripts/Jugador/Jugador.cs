@@ -65,13 +65,7 @@ public class Jugador : MonoBehaviour, IDamageable
         OnLivesChanged.Invoke(perfilJugador.Vida);
         //OnTextChanged.Invoke(perfilJugador.Vida.ToString());
         if (!EstasVivo()) {
-            perfilJugador.Vida = 5;
-            perfilJugador.Nivel = 1;
-            perfilJugador.Experiencia = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            /*SceneManager.LoadScene("Derrota");
-             */
-
+            SceneManager.LoadScene("Derrota");
         }
         Debug.Log(EstasVivo());
     }

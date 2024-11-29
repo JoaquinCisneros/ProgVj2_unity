@@ -6,14 +6,17 @@ using UnityEngine;
 public class PerfilJugador : ScriptableObject
 {
     [SerializeField]private int nivel;
+    private int nivelInicial;
     public int Nivel { get => nivel; set => nivel = value; }
 
     [SerializeField]private int experiencia;
+    private int expInicial;
     public int Experiencia { get => experiencia; set => experiencia = value; }
     [Header("Configuraciones de experiencia")]
     [SerializeField]
     [Tooltip("Cuanta xp es necesaria para el proximo nivel")]
     private int experienciaProximoNivel;
+    private int experienciaProxNivelInicial;
     public int ExperienciaProximoNivel { get => experienciaProximoNivel; set => experienciaProximoNivel = value; }
 
     [SerializeField]
@@ -29,8 +32,16 @@ public class PerfilJugador : ScriptableObject
     public float FuerzaSalto { get => fuerzaSalto; set => fuerzaSalto = value; }
 
     [Header("Configuraciones de atributos")]
+    [SerializeField] private int vidaInicial = 5;
     [SerializeField] private int vida = 5;
     public int Vida { get => vida; set => vida = value; }
+
+    public void ReiniciarValores() {
+        vida = vidaInicial;
+        nivel = nivelInicial;
+        experiencia = expInicial;
+        experienciaProximoNivel = experienciaProxNivelInicial;
+    }
 
     [Header("Configuracion SFX")]
     [SerializeField] private AudioClip jumpSFX;
